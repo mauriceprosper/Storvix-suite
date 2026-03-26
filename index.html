@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=1280">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Storvix Suite — Run Your Service Business</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -22,8 +22,8 @@
   --radius: 16px;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;min-width:1280px;}
-body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased;min-width:1280px;}
+html{scroll-behavior:smooth;}
+body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
 body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");opacity:.025;pointer-events:none;z-index:0;}
 
 /* NAV */
@@ -260,6 +260,64 @@ footer{border-top:1px solid var(--border);padding:60px 60px 40px;}
 ::-webkit-scrollbar{width:6px;}
 ::-webkit-scrollbar-track{background:var(--bg);}
 ::-webkit-scrollbar-thumb{background:var(--bg3);border-radius:3px;}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 1100px) {
+  .hero { grid-template-columns: 1fr; gap: 60px; padding: 120px 48px 80px; }
+  .hero h1 { font-size: 56px; }
+  .hero-right { max-width: 680px; margin: 0 auto; width: 100%; }
+  .pricing-wrap, .features-wrap, .how-wrap, .cta-wrap { padding-left: 48px; padding-right: 48px; }
+  .who-inner { padding: 0 48px; }
+  .compare-wrap { padding-left: 48px; padding-right: 48px; }
+  .testi-wrap { padding-left: 48px; padding-right: 48px; }
+  footer { padding: 60px 48px 40px; }
+  .footer-grid { grid-template-columns: 1.5fr 1fr 1fr; gap: 36px; }
+  .ft-col:last-child { display: none; }
+}
+
+@media (max-width: 860px) {
+  nav { padding: 0 24px; }
+  .nav-center { display: none; }
+  .nav-signin { display: none; }
+  .hero { padding: 100px 24px 60px; gap: 48px; }
+  .hero h1 { font-size: 44px; letter-spacing: -2px; }
+  .hero-sub { font-size: 16px; }
+  .hero-stats { flex-direction: column; }
+  .stat-item { border-right: none; border-bottom: 1px solid var(--border); }
+  .stat-item:last-child { border-bottom: none; }
+  .who-grid { grid-template-columns: repeat(2,1fr); }
+  .who-inner, .features-wrap, .pricing-wrap, .how-wrap,
+  .compare-wrap, .testi-wrap, .cta-wrap { padding-left: 24px; padding-right: 24px; }
+  .section-title { font-size: 38px; letter-spacing: -1.5px; }
+  .features-grid { grid-template-columns: 1fr; }
+  .price-cards { grid-template-columns: 1fr; max-width: 480px; margin-left: auto; margin-right: auto; }
+  .testi-grid { grid-template-columns: 1fr; }
+  .steps-grid { grid-template-columns: 1fr; gap: 48px; }
+  .steps-grid::before { display: none; }
+  .step { padding: 0 20px; }
+  .win-body { grid-template-columns: 1fr; }
+  .win-sidebar { display: none; }
+  .compare-table { overflow-x: auto; }
+  .ct-head, .ct-row { grid-template-columns: 1.4fr 0.8fr 0.8fr 0.8fr 1fr; min-width: 700px; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .ft-col:nth-child(3), .ft-col:last-child { display: none; }
+  .cta-title { font-size: 40px; }
+  .cta-box { padding: 60px 32px; }
+  footer { padding: 48px 24px 32px; }
+}
+
+@media (max-width: 520px) {
+  .hero h1 { font-size: 36px; letter-spacing: -1.5px; }
+  .hero-actions { flex-direction: column; align-items: flex-start; }
+  .who-grid { grid-template-columns: 1fr; }
+  .billing-toggle { flex-wrap: wrap; justify-content: center; gap: 10px; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+  .cta-btns { flex-direction: column; align-items: center; }
+  .cta-title { font-size: 34px; }
+  .section-title { font-size: 32px; }
+  .metrics-row { grid-template-columns: 1fr; }
+}
 </style>
 </head>
 <body>
@@ -290,7 +348,7 @@ footer{border-top:1px solid var(--border);padding:60px 60px 40px;}
         <a href="#pricing" class="btn-primary">Start free for 14 days</a>
         <a href="#features" class="btn-ghost">See all features <span class="arr">→</span></a>
       </div>
-      <p class="hero-trial-note">Full access for 14 days. <strong>No credit card required.</strong> Cancel anytime.</p>
+      <p class="hero-trial-note">Full access for 14 days. <strong>No credit card required.</strong> Cancel anytime. Mobile app available for staff.</p>
       <div class="hero-stats">
         <div class="stat-item"><div class="stat-num">6<em>+</em></div><div class="stat-label">Core tools, one platform</div></div>
         <div class="stat-item"><div class="stat-num">5<em>min</em></div><div class="stat-label">Average setup time</div></div>
@@ -515,6 +573,7 @@ footer{border-top:1px solid var(--border);padding:60px 60px 40px;}
     <div class="ft-brand">
       <div class="logo"><div class="ft-logo-mark">S</div>Storvix <span>Suite</span></div>
       <p>The all-in-one business management platform for Nigerian service companies. Invoicing, CRM, HR, and payroll — all in one place.</p>
+      <p style="font-size:12px;color:var(--teal);margin-top:-8px;margin-bottom:20px;">📱 Mobile app available for staff logins & data entry</p>
       <div class="ft-social"><div class="soc-btn">𝕏</div><div class="soc-btn">in</div><div class="soc-btn">f</div><div class="soc-btn">📸</div></div>
     </div>
     <div class="ft-col"><h4>Product</h4><a href="#">Invoicing</a><a href="#">CRM</a><a href="#">HR & Payroll</a><a href="#">Expenses</a><a href="#">Reports</a><a href="#">Client Portal</a></div>
